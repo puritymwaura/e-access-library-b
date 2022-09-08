@@ -10,28 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_08_060935) do
+ActiveRecord::Schema.define(version: 2022_09_08_170819) do
 
   create_table "books", force: :cascade do |t|
     t.string "name"
     t.string "author"
-    t.string "description"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.text "description"
+    t.integer "cost"
+    t.integer "customer_id"
+    t.string "book_id"
+    t.integer "genre_id"
   end
 
-  create_table "reviews", force: :cascade do |t|
-    t.string "reviews"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "users", force: :cascade do |t|
+  create_table "customers", force: :cascade do |t|
     t.string "name"
-    t.string "contact"
-    t.text "book_borrowed"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.string "age"
+    t.string "preference"
+  end
+
+  create_table "genre", force: :cascade do |t|
+    t.string "horror"
+    t.string "romance"
+    t.string "sci_fi"
+    t.string "fiction"
+  end
+
+  create_table "purchases", force: :cascade do |t|
+    t.string "age"
+    t.string "book_title"
+    t.integer "customer_id"
   end
 
 end

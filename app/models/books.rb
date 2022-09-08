@@ -1,4 +1,5 @@
-class Books <ActiveRecord::Base
-    has_many :reviews
-    has_many :users, through: :reviews
+class Book <ActiveRecord::Base
+    has_many :customers
+    has_many :purchases
+    
 end
