@@ -3,7 +3,7 @@ class ApplicationController < Sinatra::Base
 
  get '/books' do
     books = Book.all
-    books.to_json(only:[:id, :title, :author, :genre, :cost, :genre])
+    books.to_json(only: [:id, :title, :genre, :price])
   end
 
   get '/books/:id' do
@@ -22,7 +22,7 @@ class ApplicationController < Sinatra::Base
     genres = Genre.find(params[:id])
   end
 
-  get 'customers/' do
+  get '/customers' do
     customers = Customer.all
     customers.to_json(only:[:name, :age, :preference])
   end
@@ -33,7 +33,7 @@ class ApplicationController < Sinatra::Base
     purchases.to_json(only:[:purchase_title, :customer_id, :book_id])
   end
   # patch request to make the new purchases
-  patch '/purchases/' do
+  patch '/purchases' do
     patched_purchases = Book.find(params[:id])
     patched_purchases.update(
       purchase_title: params[:purchase_title],
@@ -64,6 +64,14 @@ class ApplicationController < Sinatra::Base
       customer_id: params[:customer_id],
       book_id: params[:book_id]
     )
+  end
+  post '/books' do
+    send_it = Book.create(
+      title: params[:title],
+      genre: params[:genre],
+      price: params[:price]
+    )
+    send_it.to_json
   end
 
   # delete to delete the purchases made

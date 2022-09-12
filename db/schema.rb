@@ -12,33 +12,20 @@
 
 ActiveRecord::Schema.define(version: 2022_09_08_170819) do
 
-  create_table "books", force: :cascade do |t|
+  create_table "authors", force: :cascade do |t|
     t.string "name"
-    t.string "author"
-    t.text "description"
-    t.integer "cost"
+  end
+
+  create_table "books", force: :cascade do |t|
+    t.string "title"
+    t.string "genre"
+    t.integer "price"
+    t.integer "author_id"
     t.integer "customer_id"
-    t.string "book_id"
-    t.integer "genre_id"
   end
 
   create_table "customers", force: :cascade do |t|
     t.string "name"
-    t.string "age"
-    t.string "preference"
-  end
-
-  create_table "genre", force: :cascade do |t|
-    t.string "horror"
-    t.string "romance"
-    t.string "sci_fi"
-    t.string "fiction"
-  end
-
-  create_table "purchases", force: :cascade do |t|
-    t.string "age"
-    t.string "book_title"
-    t.integer "customer_id"
   end
 
 end

@@ -8,4 +8,7 @@ test:
 
 production:
   adapter: postgresql
-  database: db/production
+  encoding: unicode
+  database: production
+  host: <%= ENV['DATABASE_HOST'] %>
+  pool: 5

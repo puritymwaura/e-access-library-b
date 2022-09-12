@@ -1,5 +1,5 @@
 class Book <ActiveRecord::Base
-    has_many :customers
+    belongs_to:customers
     has_many :purchases
     
 end
