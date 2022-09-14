@@ -13,8 +13,9 @@ test:
 
 production:
   <<: *default
-  database: db8im0l63nedn8
-  username: diceqdgdkszqls
-  host: ec2-44-209-158-64.compute-1.amazonaws.com
-  password: 822a7b6c0f8fd738b85bf03c59ca13644008150a6ac1520d1ad61234b85fafc7
+  database: d60tb94kfei78a
+  username: epwhirpnwcqfog
+  host: ec2-35-168-122-84.compute-1.amazonaws.com
+  password: c8530d8df041f5299ce72d9b2c37f17906fe0f1c15b90ff9f69e324ab153f8f1
+
 
