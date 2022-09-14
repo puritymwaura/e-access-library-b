@@ -3,7 +3,8 @@ ruby "2.7.4"
 
 # A DSL for quickly creating web applications
 # https://github.com/sinatra/sinatra
-gem "sinatra", "~> 2.1"
+# gem "sinatra", "~> 2.1"
+gem "sinatra"
 
 # A fast and simple web server
 # https://github.com/macournoyer/thin
@@ -19,18 +20,23 @@ gem "rack-cors", "~> 1.1"
 
 # An object-relational mapper
 # https://guides.rubyonrails.org/active_record_basics.html
-gem "activerecord", "~> 6.1"
+# gem "activerecord", "~> 6.1"
+gem "activerecord"
 
 # Configures common Rake tasks for working with Active Record
 # https://github.com/sinatra-activerecord/sinatra-activerecord
-gem "sinatra-activerecord", "~> 2.0"
+# gem "sinatra-activerecord", "~> 2.0"
+gem "sinatra-activerecord"
 
 # Run common tasks from the command line
 # https://github.com/ruby/rake
-gem "rake", "~> 13.0"
+# gem "rake", "~> 13.0"
+gem "rake"
 
 # Provides functionality to interact with a SQLite3 database
-gem "sqlite3", "~> 1.4"
+# gem "sqlite3", "~> 1.4"
+# gem "sqlite3"
+gem "pg"
 
 # Require all files in a folder
 gem "require_all", "~> 3.0"
@@ -52,7 +58,7 @@ group :test do
   gem "rspec", "~> 3.10"
   gem "rspec-json_expectations", "~> 2.2"
 end
-group :production do
-       gem 'pg', '~> 1.4', '>= 1.4.3'
-       gem 'sinatra-contrib', '~> 2.2', '>= 2.2.2',require: false
-end
+# group :production do
+#        gem 'pg', '~> 1.4', '>= 1.4.3'
+#        gem 'sinatra-contrib', '~> 2.2', '>= 2.2.2',require: false
+# end
